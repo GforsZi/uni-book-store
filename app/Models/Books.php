@@ -9,4 +9,14 @@ class Books extends Model
 {
     /** @use HasFactory<\Database\Factories\BooksFactory> */
     use HasFactory;
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
