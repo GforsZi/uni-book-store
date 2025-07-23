@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             DB::table('books')->insert([
                 'category_id'   => $faker->numberBetween(1, 10),
                 'title_bk'      => $faker->name,
-                'price_bk'      => $faker->numberBetween(1000, 10000),
+                'price_bk'      => $faker->numberBetween(90000, 1000000),
                 'stock_bk'      => $faker->numberBetween(10, 100),
                 'author_id'      => $faker->numberBetween(1, 10),
             ]);
