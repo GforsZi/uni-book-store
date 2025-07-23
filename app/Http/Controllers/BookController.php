@@ -59,8 +59,9 @@ class BookController extends Controller
         );
     }
 
-    function deleteData(Request $request, Books $book)
+    function deleteData(Request $request, $id)
     {
+        $book = Books::find($id);
         $book->delete();
         return redirect("/home")->with(
             "success",
