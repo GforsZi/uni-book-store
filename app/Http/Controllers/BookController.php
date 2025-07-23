@@ -14,10 +14,10 @@ class BookController extends Controller
         $data = Books::with(['author', 'category'])->get();
         return view('home', ["title" => "home page", "data" => $data]);
     }
-    function show($id)
+    function view($id)
     {
         $data = Books::with(['author', 'category'])->find($id);
-        return view('book/show', ["title" => "show page", "data" => $data]);
+        return view('book/view', ["title" => "show page", "data" => $data]);
     }
     function edit($id)
     {
@@ -27,7 +27,7 @@ class BookController extends Controller
         return view('book/edit', ["title" => "edit page", "data" => $data, "categories" => $category, "authors" => $author]);
     }
 
-    function storeData(Request $request)
+    function store(Request $request)
     {
         $validateData = $request->validate([
             "category_bk" => "required |",
@@ -59,7 +59,7 @@ class BookController extends Controller
         );
     }
 
-    function deleteData(Request $request, $id)
+    function delete(Request $request, $id)
     {
         $book = Books::find($id);
         $book->delete();

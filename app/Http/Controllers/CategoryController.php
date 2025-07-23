@@ -13,6 +13,16 @@ class CategoryController extends Controller
         return view("author/view", ["title" => "author page", "author" => $category]);
     }
 
+    public function store(Request $request)
+    {
+        $validateData = $request->validate([
+            "name_ctgy" => "required | min:3 | max:255 | string",
+        ]);
+
+        Category::create($validateData);
+        return redirect("/home")->with("success", "data created");
+    }
+
     public function delete(Request $request, $id)
     {
         $category = Category::find($id);

@@ -30,7 +30,7 @@
                   opsi
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="/home/book/{{$data->id}}/edit" class="dropdown-item text-warning">Edit</a></li>
+                  <li><a href="/book/{{$data->id}}/edit" class="dropdown-item text-warning">Edit</a></li>
                   <li>
                     <form action="/book/{{$data->id}}/delete" method="post">
                       @csrf
