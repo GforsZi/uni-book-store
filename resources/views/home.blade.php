@@ -1,7 +1,6 @@
 <x-layout>
     <x-slot:title></x-slot:title>
     <x-sidebar>
-
       <div class="table-responsive small">
       <table class="table table-striped table-sm">
         <thead>
