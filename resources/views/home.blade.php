@@ -1,6 +1,8 @@
 <x-layout>
     <x-slot:title></x-slot:title>
-    <div class="table-responsive small">
+    <x-sidebar>
+
+      <div class="table-responsive small">
       <table class="table table-striped table-sm">
         <thead>
           <tr>
@@ -31,4 +33,5 @@
         </tbody>
       </table>
     </div>
+  </x-sidebar>
 </x-layout>

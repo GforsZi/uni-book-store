@@ -9,6 +9,7 @@ class Books extends Model
 {
     /** @use HasFactory<\Database\Factories\BooksFactory> */
     use HasFactory;
+    protected $guarded = ["id", "timestamps"];
 
     public function author()
     {

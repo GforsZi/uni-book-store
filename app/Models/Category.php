@@ -9,6 +9,7 @@ class Category extends Model
 {
     /** @use HasFactory<\Database\Factories\CategoryFactory> */
     use HasFactory;
+    protected $guarded = ["id", "timestamps"];
     public function books()
     {
         return $this->hasMany(Books::class);
