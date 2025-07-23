@@ -2,8 +2,8 @@
     class="navbar sticky-top bg-primary-subtle flex-md-nowrap p-0 shadow"
     data-bs-theme="dark">
     <a
-        class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white"
-        href="/home">RFID-app</a>
+        class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-10 text-white"
+        href="/home">UNIBOOKSTORE</a>
 
     <ul class="navbar-nav flex-row d-md-none">
         <li class="nav-item text-nowrap">
@@ -57,71 +57,22 @@
                     </h6>
                     <ul class="nav flex-column mb-auto">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/list/siswa">
-                                Siswa
+                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/home">
+                                Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/list/kelas">
-                                Kelas
+                            <a class="nav-link d-flex align-items-center gap-2" href="/admin">
+                                Admin
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2" href="/setting/jadwal">
-                                Jadwal
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/list/absen">
-                                Absen
+                                Pengadaan
                             </a>
                         </li>
                     </ul>
                     <hr class="my-3">
-
-                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-                        <span>Form page</span>
-                        <a class="link-secondary" href="#" aria-label="Add a new report">
-                        </a>
-                    </h6>
-                    <ul class="nav flex-column mb-auto">
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/list/kelas/add">
-                                Kelas
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/list/siswa/add">
-                                Siswa
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/setting/jadwal/add">
-                                Jadwal
-                            </a>
-                        </li>
-                    </ul>
-
-                    <hr class="my-3">
-
-                    <ul class="nav flex-column mb-auto">
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/profile">
-                                Profile
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/setting">
-                                Setting
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/logout">
-                                Sign out
-                            </a>
-                        </li>
-
-                    </ul>
                 </div>
             </div>
         </div>

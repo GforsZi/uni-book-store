@@ -1,6 +1,6 @@
 <x-layout>
-  {{ $data->author->id }}
     <x-slot:title></x-slot:title>
+    <x-sidebar>
     <div class="col-md-7 col-lg-8">
       <h4 class="mb-3">Add data kelas</h4>
       <form action="/book/{{$data->id}}/edit" method="post">
@@ -102,4 +102,5 @@
         <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
       </form>
     </div>
+    </x-sidebar>
 </x-layout>
