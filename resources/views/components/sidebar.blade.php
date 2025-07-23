@@ -39,7 +39,7 @@
                 aria-labelledby="sidebarMenuLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="sidebarMenuLabel">
-                        RFID-app
+                        UNIBOOKSTORE
                     </h5>
                     <button
                         type="button"
@@ -73,10 +73,31 @@
                         </li>
                     </ul>
                     <hr class="my-3">
+                    <ul class="nav flex-column mb-auto">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/book">
+                                Data Buku
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-2" href="/author">
+                                Data Penerbit
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-2" href="/category">
+                                Data Kategori
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="min-height: 100vh;">
+            <form class="d-flex my-2" role="search">
+            <input class="form-control me-3 rounded-pill" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
             {{$slot}}
         </main>
     </div>

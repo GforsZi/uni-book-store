@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create("ru_RU");
+        $faker = Faker::create("id_ID");
         // User::factory(10)->create();
 
         for ($i = 0; $i < 10; $i++) {

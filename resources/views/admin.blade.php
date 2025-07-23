@@ -1,10 +1,6 @@
 <x-layout>
   <x-slot:title></x-slot:title>
   <x-sidebar>
-    <form class="d-flex my-2" role="search">
-      <input class="form-control me-3 rounded-pill btn btn-outline-secondary" type="search" placeholder="Search" aria-label="Search" />
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
     <div class="table-responsive small">
       <table class="table table-striped table-sm">
         <thead>
@@ -14,8 +10,7 @@
             <th scope="col">Alamat Penerbit</th>
             <th scope="col">Kota Penerbit</th>
             <th scope="col">No Telp Penerbit</th>
-            <th scope="col">Dibuat pada</th>
-            <th scope="col">Opsi</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -27,13 +22,22 @@
             <td>{{$data->author->address_ath}}</td>
             <td>{{$data->author->city_ath}}</td>
             <td>{{$data->author->phone_number_ath}}</td>
-            <td>{{$data->author->created_at}}</td>
-            <td class="d-flex"><a href="/home/book/{{$data->id}}/edit" class="btn btn-outline-secondary me-2">Edit</a>
-              <form action="/book/{{$data->id}}/delete" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-outline-danger" type="submit">Hapus</button>
-              </form>
+            <td class="d-flex">
+              <div class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  opsi
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="/home/book/{{$data->id}}/edit" class="dropdown-item text-warning">Edit</a></li>
+                  <li>
+                    <form action="/book/{{$data->id}}/delete" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <button class="dropdown-item text-danger" type="submit">Hapus</button>
+                    </form>
+                  </li>
+                </ul>
+              </div>
             </td>
             @endforeach
         </tbody>
