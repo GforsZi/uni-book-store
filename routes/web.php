@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ProcurementController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,6 +11,7 @@ Route::get('/', function () {
 
 Route::get('/home', [BookController::class, 'home']);
 Route::get('/admin', [AdminController::class, 'admin']);
+Route::get('/procurement', [ProcurementController::class, 'procurement']);
 Route::get('/home/book/{id}', [BookController::class, 'show']);
 Route::get('/home/book/{id}/edit', [BookController::class, 'edit']);
 Route::post('/book/{id}/add', [BookController::class, 'storeData']);

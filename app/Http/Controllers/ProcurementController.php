@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Books;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ProcurementController extends Controller
 {
-    function admin()
+    function procurement()
     {
         $data = Books::with(['author', 'category'])->get();
-        return view('admin', ["title" => "home page", "data" => $data]);
+        return view('procurement', ["title" => "pengadaan page", "data" => $data]);
     }
 }

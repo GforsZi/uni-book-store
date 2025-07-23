@@ -10,10 +10,11 @@
         <thead>
           <tr>
             <th scope="col">No</th>
-            <th scope="col">Nama Penerbit</th>
-            <th scope="col">Alamat Penerbit</th>
-            <th scope="col">Kota Penerbit</th>
-            <th scope="col">No Telp Penerbit</th>
+            <th scope="col">Nama Buku</th>
+            <th scope="col">Kategori Buku</th>
+            <th scope="col">Harga Buku</th>
+            <th scope="col">Stok Buku</th>
+            <th scope="col">Penerbit Buku</th>
             <th scope="col">Dibuat pada</th>
             <th scope="col">Opsi</th>
           </tr>
@@ -22,12 +23,13 @@
 
           @foreach ($data as $data)
           <tr>
-            <td>{{$data->author->id}}</td>
+            <td>{{$data->id}}</td>
+            <td>{{$data->title_bk}}</td>
+            <td>{{$data->category->name_ctgy}}</td>
+            <td>RP {{$data->price_bk}}</td>
+            <td>{{$data->stock_bk}}</td>
             <td>{{$data->author->name_ath}}</td>
-            <td>{{$data->author->address_ath}}</td>
-            <td>{{$data->author->city_ath}}</td>
-            <td>{{$data->author->phone_number_ath}}</td>
-            <td>{{$data->author->created_at}}</td>
+            <td>{{$data->created_at}}</td>
             <td class="d-flex"><a href="/home/book/{{$data->id}}/edit" class="btn btn-outline-secondary me-2">Edit</a>
               <form action="/book/{{$data->id}}/delete" method="post">
                 @csrf
