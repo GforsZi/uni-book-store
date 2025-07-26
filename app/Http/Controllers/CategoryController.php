@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function view()
     {
         $category = Category::all();
-        return view("author/view", ["title" => "author page", "author" => $category]);
+        return view("category/view", ["title" => "author page", "category" => $category]);
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect("/home")->with(
+        return redirect("/category")->with(
             "success",
             "data has been deleted"
         );

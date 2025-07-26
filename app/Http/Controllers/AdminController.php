@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Books;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     function admin()
     {
-        $data = Books::with(['author', 'category'])->get();
+        $data = Author::all();
         return view('admin', ["title" => "home page", "data" => $data]);
     }
 }

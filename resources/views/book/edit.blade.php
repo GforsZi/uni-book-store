@@ -2,7 +2,7 @@
     <x-slot:title></x-slot:title>
     <x-sidebar>
     <div class="col-md-7 col-lg-8">
-      <h4 class="mb-3">Add data kelas</h4>
+      <h4 class="mb-3">edit data buku</h4>
       <form action="/book/{{$data->id}}/edit" method="post">
         @csrf
         @method('PUT')
@@ -24,7 +24,7 @@
             </div>
             @enderror
           </div>
-            <div class="col-sm-6">
+            <div class="col-12">
               <label for="category_id" class="form-label">Kategori Buku</label>
               <div class="input-group">
                 <span class="input-group-text bg-primary text-white">
@@ -77,7 +77,7 @@
             </div>
             @enderror
           </div>
-            <div class="col-sm-6">
+            <div class="col-12">
               <label for="author_id" class="form-label">Penerbit Buku</label>
               <div class="input-group">
                 <span class="input-group-text bg-primary text-white">

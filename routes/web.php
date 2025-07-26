@@ -24,4 +24,7 @@ Route::post('/book/add', [BookController::class, 'store']);
 Route::put('/book/{id}/edit', [BookController::class, 'update']);
 Route::delete('/book/{id}/delete', [BookController::class, 'delete']);
 Route::post('/category/add', [CategoryController::class, 'store']);
-Route::delete('/category/{id}/', [CategoryController::class, 'delete']);
+Route::delete('/category/{id}/delete', [CategoryController::class, 'delete']);
+Route::post('/author/add', [AuthorController::class, 'store']);
+Route::put('/author/{id}/edit', [AuthorController::class, 'update']);
+Route::delete('/author/{id}/delete', [AuthorController::class, 'delete']);

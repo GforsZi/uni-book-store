@@ -14,9 +14,9 @@ class BookController extends Controller
         $data = Books::with(['author', 'category'])->get();
         return view('home', ["title" => "home page", "data" => $data]);
     }
-    function view($id)
+    function view()
     {
-        $data = Books::with(['author', 'category'])->find($id);
+        $data = Books::with(['author', 'category'])->get();
         return view('book/view', ["title" => "show page", "data" => $data]);
     }
     function edit($id)
