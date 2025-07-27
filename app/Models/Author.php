@@ -10,6 +10,7 @@ class Author extends Model
 {
     /** @use HasFactory<\Database\Factories\AuthorFactory> */
     use HasFactory, SoftDeletes;
+    protected $guarded = ["id", "timestamps"];
     public function books()
     {
         return $this->hasMany(Books::class);

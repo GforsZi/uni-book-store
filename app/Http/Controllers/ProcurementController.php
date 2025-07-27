@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class ProcurementController extends Controller
 {
-    function procurement()
+    function procurement(Request $request)
     {
-        $data = Books::with(['author', 'category'])->orderBy('stock_bk', 'asc')->get();
-        return view('procurement', ["title" => "pengadaan page", "data" => $data]);
+        $search = $request->query();
+        if (!$search || $search['type'] == 'search by') {
+            $data = Books::with(['author', 'category'])->orderBy('stock_bk', 'asc')->get();
+        } else {
+            $data = Books::with(['author', 'category'])->where($search['type'], 'like', '%' . $search['search'] . '%')->orderBy('stock_bk', 'asc')->get();
+        }
+        return view('procurement', ["title" => "procurement page", "data" => $data, "i" => 1]);
     }
 }

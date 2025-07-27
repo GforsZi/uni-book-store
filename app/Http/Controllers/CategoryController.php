@@ -10,7 +10,13 @@ class CategoryController extends Controller
     public function view()
     {
         $category = Category::all();
-        return view("category/view", ["title" => "author page", "category" => $category]);
+        return view("category/view", ["title" => "category page", "category" => $category]);
+    }
+
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        return view("category/edit", ["title" => "edit page", "data" => $category]);
     }
 
     public function store(Request $request)
@@ -20,7 +26,18 @@ class CategoryController extends Controller
         ]);
 
         Category::create($validateData);
-        return redirect("/home")->with("success", "data created");
+        return redirect("/category")->with("success", "data created");
+    }
+
+    public function update(Request $request, $id)
+    {
+        $category = Category::find($id);
+        $validateData = $request->validate([
+            "name_ctgy" => "required | min:3 | max:255 | string",
+        ]);
+
+        $category->update($validateData);
+        return redirect("/category")->with("success", "data updated");
     }
 
     public function delete(Request $request, $id)

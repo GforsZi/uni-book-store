@@ -1,18 +1,19 @@
 <x-layout>
-    <x-slot:title></x-slot:title>
+    <x-slot:title>{{$title}}</x-slot:title>
     <x-sidebar>
     <form action="/author/add" method="post" class="row">
+      @csrf
       <div class="col  my-1" style="min-width: 200px;">
-        <input type="text" class="form-control" placeholder="Nama Penerbit" aria-label="Nama Penerbit">
+        <input type="text" class="form-control" name="name_ath" placeholder="Nama Penerbit" aria-label="Nama Penerbit">
       </div>
       <div class="col my-1" style="min-width: 200px;">
-        <input type="text" class="form-control" placeholder="Alamat Penerbit" aria-label="Alamat Penerbit">
+        <input type="text" class="form-control" name="address_ath" placeholder="Alamat Penerbit" aria-label="Alamat Penerbit">
       </div>
       <div class="col my-1" style="min-width: 200px;">
-        <input type="text" class="form-control" placeholder="Kota Penerbit" aria-label="Kota Penerbit">
+        <input type="text" class="form-control" name="city_ath" placeholder="Kota Penerbit" aria-label="Kota Penerbit">
       </div>
       <div class="col my-1" style="min-width: 200px;">
-        <input type="text" class="form-control" placeholder="No Telp Penerbit" aria-label="No Telp Penerbit">
+        <input type="text" class="form-control" name="phone_number_ath" placeholder="No Telp Penerbit" aria-label="No Telp Penerbit">
       </div>
       <div class="col my-1" style="min-width: 200px;">
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -36,7 +37,7 @@
           <tr>
             <td>{{$author->id}}</td>
             <td>{{$author->name_ath}}</td>
-            <td>RP {{$author->address_ath}}</td>
+            <td>{{$author->address_ath}}</td>
             <td>{{$author->city_ath}}</td>
             <td>{{$author->phone_number_ath}}</td>
             <td>

@@ -1,7 +1,13 @@
 <x-layout>
-  <x-slot:title></x-slot:title>
+  <x-slot:title>{{$title}}</x-slot:title>
   <x-sidebar>
-    <x-searchbar url="/home" placeholder="search name of the book"/>
+    <x-searchbar url="/admin" placeholder="search">
+      <option value="id">ID Penerbit</option>
+      <option value="name_ath">Nama Penerbit</option>
+      <option value="address_ath">Alamat Penerbit</option>
+      <option value="city_ath">Kota Penerbit</option>
+      <option value="phone_number_ath">No Telp Penerbit</option>
+    </x-searchbar>
     <div class="table-responsive small">
       <table class="table table-striped table-sm">
         <thead>
@@ -17,7 +23,7 @@
 
           @foreach ($data as $data)
           <tr>
-            <td>{{$data->id}}</td>
+            <td>{{$i++}}</td>
             <td>{{$data->name_ath}}</td>
             <td>{{$data->address_ath}}</td>
             <td>{{$data->city_ath}}</td>

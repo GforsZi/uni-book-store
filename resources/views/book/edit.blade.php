@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:title></x-slot:title>
+    <x-slot:title>{{$title}}</x-slot:title>
     <x-sidebar>
     <div class="col-md-7 col-lg-8">
       <h4 class="mb-3">edit data buku</h4>

@@ -1,6 +1,15 @@
 <x-layout>
-    <x-slot:title></x-slot:title>
+    <x-slot:title>{{$title}}</x-slot:title>
     <x-sidebar>
+    <form action="/category/add" method="post" class="row">
+      @csrf
+      <div class="col my-1" style="min-width: 200px;">
+        <input type="text" class="form-control" name="name_ctgy" placeholder="Nama Kategori" aria-label="Nama Kategori">
+      </div>
+      <div class="col my-1" style="min-width: 200px;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
     <div class="table-responsive small">
       <table class="table table-striped table-sm">
         <thead>

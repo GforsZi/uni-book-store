@@ -6,19 +6,18 @@ use App\Models\Author;
 use App\Models\Books;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class BookController extends Controller
 {
-    function home()
-    {
-        $data = Books::with(['author', 'category'])->get();
-        return view('home', ["title" => "home page", "data" => $data]);
-    }
     function view()
     {
         $data = Books::with(['author', 'category'])->get();
-        return view('book/view', ["title" => "show page", "data" => $data]);
+        $author = Author::all();
+        $category = Category::all();
+        return view('book/view', ["title" => "book page", "data" => $data, "categories" => $category, "authors" => $author]);
     }
+
     function edit($id)
     {
         $data = Books::with(['author', 'category'])->find($id);
@@ -29,16 +28,16 @@ class BookController extends Controller
 
     function store(Request $request)
     {
-        $validateData = $request->validate([
-            "category_bk" => "required |",
+        $validatedData = $request->validate([
+            "category_id" => ["required", "exists:categories,id", Rule::notIn(['Kategori Buku'])],
             "title_bk" => "required | min:3 | max:255 | string",
             "price_bk" => "required | max:255 | string",
             "stock_bk" => "required | integer",
-            "author_bk" => "required |",
+            "author_id" => ["required", "exists:authors,id", Rule::notIn(['Penerbit Buku'])],
         ]);
 
-        Books::create($validateData);
-        return redirect("/home")->with("success", "data created");
+        Books::create($validatedData);
+        return redirect("/book")->with("success", "data created");
     }
 
     public function update(Request $request, $id)
@@ -53,7 +52,7 @@ class BookController extends Controller
         ]);
         $book->update($validatedData);
 
-        return redirect("/home")->with(
+        return redirect("/book")->with(
             "success",
             "data has been updated"
         );
@@ -63,7 +62,7 @@ class BookController extends Controller
     {
         $book = Books::find($id);
         $book->delete();
-        return redirect("/home")->with(
+        return redirect("/book")->with(
             "success",
             "data has been deleted"
         );

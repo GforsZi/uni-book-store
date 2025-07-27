@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    function admin()
+    function admin(Request $request)
     {
-        $data = Author::all();
-        return view('admin', ["title" => "home page", "data" => $data]);
+        $search =  $request->query();
+        if (!$search || $search['type'] == 'search by') {
+            $data = Author::all();
+        } else {
+            $data = Author::where($search['type'], 'like', '%' . $search['search'] . '%')->get();
+        }
+
+        return view('admin', ["title" => "admin page", "data" => $data, "i" => 1]);
     }
 }
