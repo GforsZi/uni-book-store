@@ -60,11 +60,11 @@
           @foreach ($data as $data)
           <tr>
             <td>{{$data->id}}</td>
-            <td>{{$data->category->name_ctgy}}</td>
+            <td>{{$data->category->name_ctgy ?? 'deleted'}}</td>
             <td>{{$data->title_bk}}</td>
             <td>RP.{{$data->price_bk}}</td>
             <td>{{$data->stock_bk}}</td>
-            <td>{{$data->author->name_ath}}</td>
+            <td>{{$data->author->name_ath ?? 'deleted'}}</td>
             <td>
               <div class="dropdown">
                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

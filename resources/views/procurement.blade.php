@@ -22,7 +22,7 @@
           <tr>
             <td>{{$i++}}</td>
             <td>{{$data->title_bk}}</td>
-            <td>{{$data->author->name_ath}}</td>
+            <td>{{$data->author->name_ath ?? 'deleted'}}</td>
             <td>{{$data->stock_bk}}</td>
             @endforeach
         </tbody>
